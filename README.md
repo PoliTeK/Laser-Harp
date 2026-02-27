@@ -1,7 +1,6 @@
 # Laser-Harp
 Laser Harp repo
-# Laser-Harp
-Laser Harp repo
+
 
 
 ## What is a laser harp?
