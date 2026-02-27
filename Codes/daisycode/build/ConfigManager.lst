@@ -1,0 +1,1104 @@
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"ConfigManager.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.section	.text._ZN13ConfigManagerC2Ev,"ax",%progbits
+  17              		.align	1
+  18              		.p2align 2,,3
+  19              		.global	_ZN13ConfigManagerC2Ev
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv5-d16
+  26              	_ZN13ConfigManagerC2Ev:
+  27              	.LVL0:
+  28              	.LFB545:
+  29              		.file 1 "ConfigManager.cpp"
+   1:ConfigManager.cpp **** #include "ConfigManager.h"
+   2:ConfigManager.cpp **** 
+   3:ConfigManager.cpp **** // Constructor
+   4:ConfigManager.cpp **** ConfigManager::ConfigManager() : isCalibrating_(false), configLoaded_(false) {
+  30              		.loc 1 4 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35              	.LBB4:
+  36              		.loc 1 4 76 is_stmt 0 view .LVU1
+  37 0000 0022     		movs	r2, #0
+  38 0002 8284     		strh	r2, [r0, #36]	@ movhi
+  39              	.LBE4:
+   5:ConfigManager.cpp ****     // Constructor body - will be implemented later
+   6:ConfigManager.cpp **** }
+  40              		.loc 1 6 1 view .LVU2
+  41 0004 7047     		bx	lr
+  42              		.cfi_endproc
+  43              	.LFE545:
+  45              		.global	_ZN13ConfigManagerC1Ev
+  46              		.thumb_set _ZN13ConfigManagerC1Ev,_ZN13ConfigManagerC2Ev
+  47 0006 00BF     		.section	.text._ZN13ConfigManagerD2Ev,"ax",%progbits
+  48              		.align	1
+  49              		.p2align 2,,3
+  50              		.global	_ZN13ConfigManagerD2Ev
+  51              		.syntax unified
+  52              		.thumb
+  53              		.thumb_func
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 2
+
+
+  54              		.fpu fpv5-d16
+  56              	_ZN13ConfigManagerD2Ev:
+  57              	.LVL1:
+  58              	.LFB548:
+   7:ConfigManager.cpp **** 
+   8:ConfigManager.cpp **** // Destructor
+   9:ConfigManager.cpp **** ConfigManager::~ConfigManager() {
+  59              		.loc 1 9 1 is_stmt 1 view -0
+  60              		.cfi_startproc
+  61              		@ args = 0, pretend = 0, frame = 0
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+  63              		@ link register save eliminated.
+  10:ConfigManager.cpp ****     // Destructor body - will be implemented later
+  11:ConfigManager.cpp **** }
+  64              		.loc 1 11 1 is_stmt 0 view .LVU4
+  65 0000 7047     		bx	lr
+  66              		.cfi_endproc
+  67              	.LFE548:
+  69              		.global	_ZN13ConfigManagerD1Ev
+  70              		.thumb_set _ZN13ConfigManagerD1Ev,_ZN13ConfigManagerD2Ev
+  71 0002 00BF     		.section	.text._ZN13ConfigManager4InitEv,"ax",%progbits
+  72              		.align	1
+  73              		.p2align 2,,3
+  74              		.global	_ZN13ConfigManager4InitEv
+  75              		.syntax unified
+  76              		.thumb
+  77              		.thumb_func
+  78              		.fpu fpv5-d16
+  80              	_ZN13ConfigManager4InitEv:
+  81              	.LVL2:
+  82              	.LFB550:
+  12:ConfigManager.cpp **** 
+  13:ConfigManager.cpp **** // Initialization
+  14:ConfigManager.cpp **** void ConfigManager::Init() {
+  83              		.loc 1 14 28 is_stmt 1 view -0
+  84              		.cfi_startproc
+  85              		@ args = 0, pretend = 0, frame = 0
+  86              		@ frame_needed = 0, uses_anonymous_args = 0
+  87              		@ link register save eliminated.
+  15:ConfigManager.cpp ****     // TODO: Implement initialization
+  16:ConfigManager.cpp ****     LoadDefaults();
+  88              		.loc 1 16 5 view .LVU6
+  89              	.LBB7:
+  90              	.LBB8:
+  17:ConfigManager.cpp **** }
+  18:ConfigManager.cpp **** 
+  19:ConfigManager.cpp **** // Configuration management
+  20:ConfigManager.cpp **** void ConfigManager::LoadDefaults() {
+  21:ConfigManager.cpp ****     config_.numBeams = 7;           // 7 inputs from Arduino
+  22:ConfigManager.cpp ****     config_.baseNote = 60;          // C4
+  23:ConfigManager.cpp ****     config_.noteInterval = 2;       // Whole tone scale
+  24:ConfigManager.cpp ****     config_.midiChannel = 1;
+  25:ConfigManager.cpp ****     config_.midiVelocity = 100;
+  91              		.loc 1 25 26 is_stmt 0 view .LVU7
+  92 0000 4FF4B272 		mov	r2, #356
+  93              	.LVL3:
+  94              		.loc 1 25 26 view .LVU8
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 3
+
+
+  95              	.LBE8:
+  96              	.LBI7:
+  20:ConfigManager.cpp ****     config_.numBeams = 7;           // 7 inputs from Arduino
+  97              		.loc 1 20 6 is_stmt 1 view .LVU9
+  98              	.LBB9:
+  21:ConfigManager.cpp ****     config_.baseNote = 60;          // C4
+  99              		.loc 1 21 5 view .LVU10
+  22:ConfigManager.cpp ****     config_.noteInterval = 2;       // Whole tone scale
+ 100              		.loc 1 22 5 view .LVU11
+  23:ConfigManager.cpp ****     config_.midiChannel = 1;
+ 101              		.loc 1 23 5 view .LVU12
+  24:ConfigManager.cpp ****     config_.midiVelocity = 100;
+ 102              		.loc 1 24 5 view .LVU13
+ 103              		.loc 1 25 5 view .LVU14
+  26:ConfigManager.cpp ****     config_.midiEnabled = true;
+ 104              		.loc 1 26 5 view .LVU15
+  27:ConfigManager.cpp ****     config_.audioEnabled = true;
+ 105              		.loc 1 27 5 view .LVU16
+ 106              		.loc 1 27 26 is_stmt 0 view .LVU17
+ 107 0004 0121     		movs	r1, #1
+  28:ConfigManager.cpp ****     config_.reverbLevel = 0.3f;
+ 108              		.loc 1 28 25 view .LVU18
+ 109 0006 0B4B     		ldr	r3, .L6
+  29:ConfigManager.cpp ****     config_.masterVolume = 0.8f;
+  30:ConfigManager.cpp ****     config_.waveform = 0;           // Sine wave
+ 110              		.loc 1 30 22 view .LVU19
+ 111 0008 4FF0000C 		mov	ip, #0
+  25:ConfigManager.cpp ****     config_.midiEnabled = true;
+ 112              		.loc 1 25 26 view .LVU20
+ 113 000c 8280     		strh	r2, [r0, #4]	@ movhi
+  29:ConfigManager.cpp ****     config_.masterVolume = 0.8f;
+ 114              		.loc 1 29 26 view .LVU21
+ 115 000e 0A4A     		ldr	r2, .L6+4
+  27:ConfigManager.cpp ****     config_.reverbLevel = 0.3f;
+ 116              		.loc 1 27 26 view .LVU22
+ 117 0010 8171     		strb	r1, [r0, #6]
+  28:ConfigManager.cpp ****     config_.masterVolume = 0.8f;
+ 118              		.loc 1 28 5 is_stmt 1 view .LVU23
+  29:ConfigManager.cpp ****     config_.waveform = 0;           // Sine wave
+ 119              		.loc 1 29 26 is_stmt 0 view .LVU24
+ 120 0012 C260     		str	r2, [r0, #12]	@ float
+  31:ConfigManager.cpp ****     config_.attackTime = 0.01f;
+ 121              		.loc 1 31 24 view .LVU25
+ 122 0014 094A     		ldr	r2, .L6+8
+  32:ConfigManager.cpp ****     config_.decayTime = 0.1f;
+ 123              		.loc 1 32 23 view .LVU26
+ 124 0016 0A49     		ldr	r1, .L6+12
+  31:ConfigManager.cpp ****     config_.attackTime = 0.01f;
+ 125              		.loc 1 31 24 view .LVU27
+ 126 0018 4261     		str	r2, [r0, #20]	@ float
+  33:ConfigManager.cpp ****     config_.sustainLevel = 0.7f;
+ 127              		.loc 1 33 26 view .LVU28
+ 128 001a 0A4A     		ldr	r2, .L6+16
+  28:ConfigManager.cpp ****     config_.masterVolume = 0.8f;
+ 129              		.loc 1 28 25 view .LVU29
+ 130 001c 8360     		str	r3, [r0, #8]	@ float
+  29:ConfigManager.cpp ****     config_.waveform = 0;           // Sine wave
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 4
+
+
+ 131              		.loc 1 29 5 is_stmt 1 view .LVU30
+  30:ConfigManager.cpp ****     config_.attackTime = 0.01f;
+ 132              		.loc 1 30 5 view .LVU31
+  30:ConfigManager.cpp ****     config_.attackTime = 0.01f;
+ 133              		.loc 1 30 22 is_stmt 0 view .LVU32
+ 134 001e 80F810C0 		strb	ip, [r0, #16]
+  31:ConfigManager.cpp ****     config_.decayTime = 0.1f;
+ 135              		.loc 1 31 5 is_stmt 1 view .LVU33
+  32:ConfigManager.cpp ****     config_.sustainLevel = 0.7f;
+ 136              		.loc 1 32 5 view .LVU34
+  32:ConfigManager.cpp ****     config_.sustainLevel = 0.7f;
+ 137              		.loc 1 32 23 is_stmt 0 view .LVU35
+ 138 0022 8161     		str	r1, [r0, #24]	@ float
+ 139              		.loc 1 33 5 is_stmt 1 view .LVU36
+  34:ConfigManager.cpp ****     config_.releaseTime = 0.3f;
+ 140              		.loc 1 34 25 is_stmt 0 view .LVU37
+ 141 0024 0362     		str	r3, [r0, #32]	@ float
+  33:ConfigManager.cpp ****     config_.releaseTime = 0.3f;
+ 142              		.loc 1 33 26 view .LVU38
+ 143 0026 C261     		str	r2, [r0, #28]	@ float
+ 144              		.loc 1 34 5 is_stmt 1 view .LVU39
+ 145              	.LVL4:
+ 146              		.loc 1 34 5 is_stmt 0 view .LVU40
+ 147              	.LBE9:
+ 148              	.LBE7:
+  14:ConfigManager.cpp ****     // TODO: Implement initialization
+ 149              		.loc 1 14 28 view .LVU41
+ 150 0028 10B4     		push	{r4}
+ 151              		.cfi_def_cfa_offset 4
+ 152              		.cfi_offset 4, -4
+ 153              	.LBB11:
+ 154              	.LBB10:
+  21:ConfigManager.cpp ****     config_.baseNote = 60;          // C4
+ 155              		.loc 1 21 22 view .LVU42
+ 156 002a 074C     		ldr	r4, .L6+20
+ 157 002c 0460     		str	r4, [r0]
+ 158              	.LBE10:
+ 159              	.LBE11:
+  17:ConfigManager.cpp **** 
+ 160              		.loc 1 17 1 view .LVU43
+ 161 002e 5DF8044B 		ldr	r4, [sp], #4
+ 162              		.cfi_restore 4
+ 163              		.cfi_def_cfa_offset 0
+ 164 0032 7047     		bx	lr
+ 165              	.L7:
+ 166              		.align	2
+ 167              	.L6:
+ 168 0034 9A99993E 		.word	1050253722
+ 169 0038 CDCC4C3F 		.word	1061997773
+ 170 003c 0AD7233C 		.word	1008981770
+ 171 0040 CDCCCC3D 		.word	1036831949
+ 172 0044 3333333F 		.word	1060320051
+ 173 0048 073C0201 		.word	16923655
+ 174              		.cfi_endproc
+ 175              	.LFE550:
+ 177              		.section	.text._ZN13ConfigManager12LoadDefaultsEv,"ax",%progbits
+ 178              		.align	1
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 5
+
+
+ 179              		.p2align 2,,3
+ 180              		.global	_ZN13ConfigManager12LoadDefaultsEv
+ 181              		.syntax unified
+ 182              		.thumb
+ 183              		.thumb_func
+ 184              		.fpu fpv5-d16
+ 186              	_ZN13ConfigManager12LoadDefaultsEv:
+ 187              	.LFB578:
+ 188              		.cfi_startproc
+ 189              		@ args = 0, pretend = 0, frame = 0
+ 190              		@ frame_needed = 0, uses_anonymous_args = 0
+ 191              		@ link register save eliminated.
+ 192 0000 4FF4B272 		mov	r2, #356
+ 193 0004 0121     		movs	r1, #1
+ 194 0006 0B4B     		ldr	r3, .L10
+ 195 0008 4FF0000C 		mov	ip, #0
+ 196 000c 8280     		strh	r2, [r0, #4]	@ movhi
+ 197 000e 0A4A     		ldr	r2, .L10+4
+ 198 0010 8171     		strb	r1, [r0, #6]
+ 199 0012 C260     		str	r2, [r0, #12]	@ float
+ 200 0014 094A     		ldr	r2, .L10+8
+ 201 0016 0A49     		ldr	r1, .L10+12
+ 202 0018 4261     		str	r2, [r0, #20]	@ float
+ 203 001a 0A4A     		ldr	r2, .L10+16
+ 204 001c 8360     		str	r3, [r0, #8]	@ float
+ 205 001e 80F810C0 		strb	ip, [r0, #16]
+ 206 0022 8161     		str	r1, [r0, #24]	@ float
+ 207 0024 0362     		str	r3, [r0, #32]	@ float
+ 208 0026 C261     		str	r2, [r0, #28]	@ float
+ 209 0028 10B4     		push	{r4}
+ 210              		.cfi_def_cfa_offset 4
+ 211              		.cfi_offset 4, -4
+ 212 002a 074C     		ldr	r4, .L10+20
+ 213 002c 0460     		str	r4, [r0]
+ 214 002e 5DF8044B 		ldr	r4, [sp], #4
+ 215              		.cfi_restore 4
+ 216              		.cfi_def_cfa_offset 0
+ 217 0032 7047     		bx	lr
+ 218              	.L11:
+ 219              		.align	2
+ 220              	.L10:
+ 221 0034 9A99993E 		.word	1050253722
+ 222 0038 CDCC4C3F 		.word	1061997773
+ 223 003c 0AD7233C 		.word	1008981770
+ 224 0040 CDCCCC3D 		.word	1036831949
+ 225 0044 3333333F 		.word	1060320051
+ 226 0048 073C0201 		.word	16923655
+ 227              		.cfi_endproc
+ 228              	.LFE578:
+ 230              		.section	.text._ZN13ConfigManager10SaveConfigEv,"ax",%progbits
+ 231              		.align	1
+ 232              		.p2align 2,,3
+ 233              		.global	_ZN13ConfigManager10SaveConfigEv
+ 234              		.syntax unified
+ 235              		.thumb
+ 236              		.thumb_func
+ 237              		.fpu fpv5-d16
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 6
+
+
+ 239              	_ZN13ConfigManager10SaveConfigEv:
+ 240              	.LVL5:
+ 241              	.LFB552:
+  35:ConfigManager.cpp **** }
+  36:ConfigManager.cpp **** 
+  37:ConfigManager.cpp **** void ConfigManager::SaveConfig() {
+ 242              		.loc 1 37 34 is_stmt 1 view -0
+ 243              		.cfi_startproc
+ 244              		@ args = 0, pretend = 0, frame = 0
+ 245              		@ frame_needed = 0, uses_anonymous_args = 0
+ 246              		@ link register save eliminated.
+  38:ConfigManager.cpp ****     // TODO: Implement configuration saving to persistent storage
+  39:ConfigManager.cpp **** }
+ 247              		.loc 1 39 1 is_stmt 0 view .LVU45
+ 248 0000 7047     		bx	lr
+ 249              		.cfi_endproc
+ 250              	.LFE552:
+ 252 0002 00BF     		.section	.text._ZN13ConfigManager10LoadConfigEv,"ax",%progbits
+ 253              		.align	1
+ 254              		.p2align 2,,3
+ 255              		.global	_ZN13ConfigManager10LoadConfigEv
+ 256              		.syntax unified
+ 257              		.thumb
+ 258              		.thumb_func
+ 259              		.fpu fpv5-d16
+ 261              	_ZN13ConfigManager10LoadConfigEv:
+ 262              	.LFB580:
+ 263              		.cfi_startproc
+ 264              		@ args = 0, pretend = 0, frame = 0
+ 265              		@ frame_needed = 0, uses_anonymous_args = 0
+ 266              		@ link register save eliminated.
+ 267 0000 7047     		bx	lr
+ 268              		.cfi_endproc
+ 269              	.LFE580:
+ 271 0002 00BF     		.section	.text._ZN13ConfigManager13IsConfigValidEv,"ax",%progbits
+ 272              		.align	1
+ 273              		.p2align 2,,3
+ 274              		.global	_ZN13ConfigManager13IsConfigValidEv
+ 275              		.syntax unified
+ 276              		.thumb
+ 277              		.thumb_func
+ 278              		.fpu fpv5-d16
+ 280              	_ZN13ConfigManager13IsConfigValidEv:
+ 281              	.LVL6:
+ 282              	.LFB554:
+  40:ConfigManager.cpp **** 
+  41:ConfigManager.cpp **** void ConfigManager::LoadConfig() {
+  42:ConfigManager.cpp ****     // TODO: Implement configuration loading from persistent storage
+  43:ConfigManager.cpp **** }
+  44:ConfigManager.cpp **** 
+  45:ConfigManager.cpp **** bool ConfigManager::IsConfigValid() {
+ 283              		.loc 1 45 37 is_stmt 1 view -0
+ 284              		.cfi_startproc
+ 285              		@ args = 0, pretend = 0, frame = 0
+ 286              		@ frame_needed = 0, uses_anonymous_args = 0
+ 287              		@ link register save eliminated.
+  46:ConfigManager.cpp ****     // TODO: Implement configuration validation
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 7
+
+
+  47:ConfigManager.cpp ****     return true;
+ 288              		.loc 1 47 5 view .LVU47
+  48:ConfigManager.cpp **** }
+ 289              		.loc 1 48 1 is_stmt 0 view .LVU48
+ 290 0000 0120     		movs	r0, #1
+ 291              	.LVL7:
+ 292              		.loc 1 48 1 view .LVU49
+ 293 0002 7047     		bx	lr
+ 294              		.cfi_endproc
+ 295              	.LFE554:
+ 297              		.section	.text._ZN13ConfigManager9GetConfigEv,"ax",%progbits
+ 298              		.align	1
+ 299              		.p2align 2,,3
+ 300              		.global	_ZN13ConfigManager9GetConfigEv
+ 301              		.syntax unified
+ 302              		.thumb
+ 303              		.thumb_func
+ 304              		.fpu fpv5-d16
+ 306              	_ZN13ConfigManager9GetConfigEv:
+ 307              	.LVL8:
+ 308              	.LFB555:
+  49:ConfigManager.cpp **** 
+  50:ConfigManager.cpp **** // Getters
+  51:ConfigManager.cpp **** LaserHarpConfig* ConfigManager::GetConfig() {
+ 309              		.loc 1 51 45 is_stmt 1 view -0
+ 310              		.cfi_startproc
+ 311              		@ args = 0, pretend = 0, frame = 0
+ 312              		@ frame_needed = 0, uses_anonymous_args = 0
+ 313              		@ link register save eliminated.
+  52:ConfigManager.cpp ****     return &config_;
+ 314              		.loc 1 52 5 view .LVU51
+  53:ConfigManager.cpp **** }
+ 315              		.loc 1 53 1 is_stmt 0 view .LVU52
+ 316 0000 7047     		bx	lr
+ 317              		.cfi_endproc
+ 318              	.LFE555:
+ 320 0002 00BF     		.section	.text._ZNK13ConfigManager9GetConfigEv,"ax",%progbits
+ 321              		.align	1
+ 322              		.p2align 2,,3
+ 323              		.global	_ZNK13ConfigManager9GetConfigEv
+ 324              		.syntax unified
+ 325              		.thumb
+ 326              		.thumb_func
+ 327              		.fpu fpv5-d16
+ 329              	_ZNK13ConfigManager9GetConfigEv:
+ 330              	.LFB588:
+ 331              		.cfi_startproc
+ 332              		@ args = 0, pretend = 0, frame = 0
+ 333              		@ frame_needed = 0, uses_anonymous_args = 0
+ 334              		@ link register save eliminated.
+ 335 0000 7047     		bx	lr
+ 336              		.cfi_endproc
+ 337              	.LFE588:
+ 339 0002 00BF     		.section	.text._ZNK13ConfigManager11GetNumBeamsEv,"ax",%progbits
+ 340              		.align	1
+ 341              		.p2align 2,,3
+ 342              		.global	_ZNK13ConfigManager11GetNumBeamsEv
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 8
+
+
+ 343              		.syntax unified
+ 344              		.thumb
+ 345              		.thumb_func
+ 346              		.fpu fpv5-d16
+ 348              	_ZNK13ConfigManager11GetNumBeamsEv:
+ 349              	.LVL9:
+ 350              	.LFB557:
+  54:ConfigManager.cpp **** 
+  55:ConfigManager.cpp **** const LaserHarpConfig* ConfigManager::GetConfig() const {
+  56:ConfigManager.cpp ****     return &config_;
+  57:ConfigManager.cpp **** }
+  58:ConfigManager.cpp **** 
+  59:ConfigManager.cpp **** // Individual parameter access
+  60:ConfigManager.cpp **** uint8_t ConfigManager::GetNumBeams() const {
+ 351              		.loc 1 60 44 is_stmt 1 view -0
+ 352              		.cfi_startproc
+ 353              		@ args = 0, pretend = 0, frame = 0
+ 354              		@ frame_needed = 0, uses_anonymous_args = 0
+ 355              		@ link register save eliminated.
+  61:ConfigManager.cpp ****     return config_.numBeams;
+ 356              		.loc 1 61 5 view .LVU54
+  62:ConfigManager.cpp **** }
+ 357              		.loc 1 62 1 is_stmt 0 view .LVU55
+ 358 0000 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 359              	.LVL10:
+ 360              		.loc 1 62 1 view .LVU56
+ 361 0002 7047     		bx	lr
+ 362              		.cfi_endproc
+ 363              	.LFE557:
+ 365              		.section	.text._ZNK13ConfigManager11GetBaseNoteEv,"ax",%progbits
+ 366              		.align	1
+ 367              		.p2align 2,,3
+ 368              		.global	_ZNK13ConfigManager11GetBaseNoteEv
+ 369              		.syntax unified
+ 370              		.thumb
+ 371              		.thumb_func
+ 372              		.fpu fpv5-d16
+ 374              	_ZNK13ConfigManager11GetBaseNoteEv:
+ 375              	.LVL11:
+ 376              	.LFB558:
+  63:ConfigManager.cpp **** 
+  64:ConfigManager.cpp **** uint8_t ConfigManager::GetBaseNote() const {
+ 377              		.loc 1 64 44 is_stmt 1 view -0
+ 378              		.cfi_startproc
+ 379              		@ args = 0, pretend = 0, frame = 0
+ 380              		@ frame_needed = 0, uses_anonymous_args = 0
+ 381              		@ link register save eliminated.
+  65:ConfigManager.cpp ****     return config_.baseNote;
+ 382              		.loc 1 65 5 view .LVU58
+  66:ConfigManager.cpp **** }
+ 383              		.loc 1 66 1 is_stmt 0 view .LVU59
+ 384 0000 4078     		ldrb	r0, [r0, #1]	@ zero_extendqisi2
+ 385              	.LVL12:
+ 386              		.loc 1 66 1 view .LVU60
+ 387 0002 7047     		bx	lr
+ 388              		.cfi_endproc
+ 389              	.LFE558:
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 9
+
+
+ 391              		.section	.text._ZNK13ConfigManager14GetMidiChannelEv,"ax",%progbits
+ 392              		.align	1
+ 393              		.p2align 2,,3
+ 394              		.global	_ZNK13ConfigManager14GetMidiChannelEv
+ 395              		.syntax unified
+ 396              		.thumb
+ 397              		.thumb_func
+ 398              		.fpu fpv5-d16
+ 400              	_ZNK13ConfigManager14GetMidiChannelEv:
+ 401              	.LVL13:
+ 402              	.LFB559:
+  67:ConfigManager.cpp **** 
+  68:ConfigManager.cpp **** uint8_t ConfigManager::GetMidiChannel() const {
+ 403              		.loc 1 68 47 is_stmt 1 view -0
+ 404              		.cfi_startproc
+ 405              		@ args = 0, pretend = 0, frame = 0
+ 406              		@ frame_needed = 0, uses_anonymous_args = 0
+ 407              		@ link register save eliminated.
+  69:ConfigManager.cpp ****     return config_.midiChannel;
+ 408              		.loc 1 69 5 view .LVU62
+  70:ConfigManager.cpp **** }
+ 409              		.loc 1 70 1 is_stmt 0 view .LVU63
+ 410 0000 C078     		ldrb	r0, [r0, #3]	@ zero_extendqisi2
+ 411              	.LVL14:
+ 412              		.loc 1 70 1 view .LVU64
+ 413 0002 7047     		bx	lr
+ 414              		.cfi_endproc
+ 415              	.LFE559:
+ 417              		.section	.text._ZNK13ConfigManager15GetMasterVolumeEv,"ax",%progbits
+ 418              		.align	1
+ 419              		.p2align 2,,3
+ 420              		.global	_ZNK13ConfigManager15GetMasterVolumeEv
+ 421              		.syntax unified
+ 422              		.thumb
+ 423              		.thumb_func
+ 424              		.fpu fpv5-d16
+ 426              	_ZNK13ConfigManager15GetMasterVolumeEv:
+ 427              	.LVL15:
+ 428              	.LFB560:
+  71:ConfigManager.cpp **** 
+  72:ConfigManager.cpp **** float ConfigManager::GetMasterVolume() const {
+ 429              		.loc 1 72 46 is_stmt 1 view -0
+ 430              		.cfi_startproc
+ 431              		@ args = 0, pretend = 0, frame = 0
+ 432              		@ frame_needed = 0, uses_anonymous_args = 0
+ 433              		@ link register save eliminated.
+  73:ConfigManager.cpp ****     return config_.masterVolume;
+ 434              		.loc 1 73 5 view .LVU66
+  74:ConfigManager.cpp **** }
+ 435              		.loc 1 74 1 is_stmt 0 view .LVU67
+ 436 0000 90ED030A 		vldr.32	s0, [r0, #12]
+ 437 0004 7047     		bx	lr
+ 438              		.cfi_endproc
+ 439              	.LFE560:
+ 441              		.section	.text._ZNK13ConfigManager14IsAudioEnabledEv,"ax",%progbits
+ 442              		.align	1
+ 443              		.p2align 2,,3
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 10
+
+
+ 444              		.global	_ZNK13ConfigManager14IsAudioEnabledEv
+ 445              		.syntax unified
+ 446              		.thumb
+ 447              		.thumb_func
+ 448              		.fpu fpv5-d16
+ 450              	_ZNK13ConfigManager14IsAudioEnabledEv:
+ 451              	.LVL16:
+ 452              	.LFB561:
+  75:ConfigManager.cpp **** 
+  76:ConfigManager.cpp **** bool ConfigManager::IsAudioEnabled() const {
+ 453              		.loc 1 76 44 is_stmt 1 view -0
+ 454              		.cfi_startproc
+ 455              		@ args = 0, pretend = 0, frame = 0
+ 456              		@ frame_needed = 0, uses_anonymous_args = 0
+ 457              		@ link register save eliminated.
+  77:ConfigManager.cpp ****     return config_.audioEnabled;
+ 458              		.loc 1 77 5 view .LVU69
+  78:ConfigManager.cpp **** }
+ 459              		.loc 1 78 1 is_stmt 0 view .LVU70
+ 460 0000 8079     		ldrb	r0, [r0, #6]	@ zero_extendqisi2
+ 461              	.LVL17:
+ 462              		.loc 1 78 1 view .LVU71
+ 463 0002 7047     		bx	lr
+ 464              		.cfi_endproc
+ 465              	.LFE561:
+ 467              		.section	.text._ZNK13ConfigManager13IsMidiEnabledEv,"ax",%progbits
+ 468              		.align	1
+ 469              		.p2align 2,,3
+ 470              		.global	_ZNK13ConfigManager13IsMidiEnabledEv
+ 471              		.syntax unified
+ 472              		.thumb
+ 473              		.thumb_func
+ 474              		.fpu fpv5-d16
+ 476              	_ZNK13ConfigManager13IsMidiEnabledEv:
+ 477              	.LVL18:
+ 478              	.LFB562:
+  79:ConfigManager.cpp **** 
+  80:ConfigManager.cpp **** bool ConfigManager::IsMidiEnabled() const {
+ 479              		.loc 1 80 43 is_stmt 1 view -0
+ 480              		.cfi_startproc
+ 481              		@ args = 0, pretend = 0, frame = 0
+ 482              		@ frame_needed = 0, uses_anonymous_args = 0
+ 483              		@ link register save eliminated.
+  81:ConfigManager.cpp ****     return config_.midiEnabled;
+ 484              		.loc 1 81 5 view .LVU73
+  82:ConfigManager.cpp **** }
+ 485              		.loc 1 82 1 is_stmt 0 view .LVU74
+ 486 0000 4079     		ldrb	r0, [r0, #5]	@ zero_extendqisi2
+ 487              	.LVL19:
+ 488              		.loc 1 82 1 view .LVU75
+ 489 0002 7047     		bx	lr
+ 490              		.cfi_endproc
+ 491              	.LFE562:
+ 493              		.section	.text._ZN13ConfigManager11SetNumBeamsEh,"ax",%progbits
+ 494              		.align	1
+ 495              		.p2align 2,,3
+ 496              		.global	_ZN13ConfigManager11SetNumBeamsEh
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 11
+
+
+ 497              		.syntax unified
+ 498              		.thumb
+ 499              		.thumb_func
+ 500              		.fpu fpv5-d16
+ 502              	_ZN13ConfigManager11SetNumBeamsEh:
+ 503              	.LVL20:
+ 504              	.LFB563:
+  83:ConfigManager.cpp **** 
+  84:ConfigManager.cpp **** // Individual parameter setters
+  85:ConfigManager.cpp **** void ConfigManager::SetNumBeams(uint8_t numBeams) {
+ 505              		.loc 1 85 51 is_stmt 1 view -0
+ 506              		.cfi_startproc
+ 507              		@ args = 0, pretend = 0, frame = 0
+ 508              		@ frame_needed = 0, uses_anonymous_args = 0
+ 509              		@ link register save eliminated.
+  86:ConfigManager.cpp ****     if (numBeams > 0 && numBeams <= 16) {
+ 510              		.loc 1 86 5 view .LVU77
+ 511 0000 4B1E     		subs	r3, r1, #1
+ 512 0002 0F2B     		cmp	r3, #15
+  87:ConfigManager.cpp ****         config_.numBeams = numBeams;
+ 513              		.loc 1 87 9 view .LVU78
+ 514              		.loc 1 87 26 is_stmt 0 view .LVU79
+ 515 0004 98BF     		it	ls
+ 516 0006 0170     		strbls	r1, [r0]
+  88:ConfigManager.cpp ****     }
+  89:ConfigManager.cpp **** }
+ 517              		.loc 1 89 1 view .LVU80
+ 518 0008 7047     		bx	lr
+ 519              		.cfi_endproc
+ 520              	.LFE563:
+ 522 000a 00BF     		.section	.text._ZN13ConfigManager11SetBaseNoteEh,"ax",%progbits
+ 523              		.align	1
+ 524              		.p2align 2,,3
+ 525              		.global	_ZN13ConfigManager11SetBaseNoteEh
+ 526              		.syntax unified
+ 527              		.thumb
+ 528              		.thumb_func
+ 529              		.fpu fpv5-d16
+ 531              	_ZN13ConfigManager11SetBaseNoteEh:
+ 532              	.LVL21:
+ 533              	.LFB564:
+  90:ConfigManager.cpp **** 
+  91:ConfigManager.cpp **** void ConfigManager::SetBaseNote(uint8_t baseNote) {
+ 534              		.loc 1 91 51 is_stmt 1 view -0
+ 535              		.cfi_startproc
+ 536              		@ args = 0, pretend = 0, frame = 0
+ 537              		@ frame_needed = 0, uses_anonymous_args = 0
+ 538              		@ link register save eliminated.
+  92:ConfigManager.cpp ****     if (baseNote < 128) {
+ 539              		.loc 1 92 5 view .LVU82
+ 540 0000 0B06     		lsls	r3, r1, #24
+  93:ConfigManager.cpp ****         config_.baseNote = baseNote;
+ 541              		.loc 1 93 9 view .LVU83
+ 542              		.loc 1 93 26 is_stmt 0 view .LVU84
+ 543 0002 58BF     		it	pl
+ 544 0004 4170     		strbpl	r1, [r0, #1]
+  94:ConfigManager.cpp ****     }
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 12
+
+
+  95:ConfigManager.cpp **** }
+ 545              		.loc 1 95 1 view .LVU85
+ 546 0006 7047     		bx	lr
+ 547              		.cfi_endproc
+ 548              	.LFE564:
+ 550              		.section	.text._ZN13ConfigManager14SetMidiChannelEh,"ax",%progbits
+ 551              		.align	1
+ 552              		.p2align 2,,3
+ 553              		.global	_ZN13ConfigManager14SetMidiChannelEh
+ 554              		.syntax unified
+ 555              		.thumb
+ 556              		.thumb_func
+ 557              		.fpu fpv5-d16
+ 559              	_ZN13ConfigManager14SetMidiChannelEh:
+ 560              	.LVL22:
+ 561              	.LFB565:
+  96:ConfigManager.cpp **** 
+  97:ConfigManager.cpp **** void ConfigManager::SetMidiChannel(uint8_t channel) {
+ 562              		.loc 1 97 53 is_stmt 1 view -0
+ 563              		.cfi_startproc
+ 564              		@ args = 0, pretend = 0, frame = 0
+ 565              		@ frame_needed = 0, uses_anonymous_args = 0
+ 566              		@ link register save eliminated.
+  98:ConfigManager.cpp ****     if (channel >= 1 && channel <= 16) {
+ 567              		.loc 1 98 5 view .LVU87
+ 568 0000 4B1E     		subs	r3, r1, #1
+ 569 0002 0F2B     		cmp	r3, #15
+  99:ConfigManager.cpp ****         config_.midiChannel = channel;
+ 570              		.loc 1 99 9 view .LVU88
+ 571              		.loc 1 99 29 is_stmt 0 view .LVU89
+ 572 0004 98BF     		it	ls
+ 573 0006 C170     		strbls	r1, [r0, #3]
+ 100:ConfigManager.cpp ****     }
+ 101:ConfigManager.cpp **** }
+ 574              		.loc 1 101 1 view .LVU90
+ 575 0008 7047     		bx	lr
+ 576              		.cfi_endproc
+ 577              	.LFE565:
+ 579 000a 00BF     		.section	.text._ZN13ConfigManager15SetMasterVolumeEf,"ax",%progbits
+ 580              		.align	1
+ 581              		.p2align 2,,3
+ 582              		.global	_ZN13ConfigManager15SetMasterVolumeEf
+ 583              		.syntax unified
+ 584              		.thumb
+ 585              		.thumb_func
+ 586              		.fpu fpv5-d16
+ 588              	_ZN13ConfigManager15SetMasterVolumeEf:
+ 589              	.LVL23:
+ 590              	.LFB566:
+ 102:ConfigManager.cpp **** 
+ 103:ConfigManager.cpp **** void ConfigManager::SetMasterVolume(float volume) {
+ 591              		.loc 1 103 51 is_stmt 1 view -0
+ 592              		.cfi_startproc
+ 593              		@ args = 0, pretend = 0, frame = 0
+ 594              		@ frame_needed = 0, uses_anonymous_args = 0
+ 595              		@ link register save eliminated.
+ 104:ConfigManager.cpp ****     if (volume >= 0.0f && volume <= 1.0f) {
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 13
+
+
+ 596              		.loc 1 104 5 view .LVU92
+ 597 0000 B5EEC00A 		vcmpe.f32	s0, #0
+ 598 0004 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 599 0008 08DB     		blt	.L29
+ 600              		.loc 1 104 24 is_stmt 0 discriminator 1 view .LVU93
+ 601 000a F7EE007A 		vmov.f32	s15, #1.0e+0
+ 602 000e B4EEE70A 		vcmpe.f32	s0, s15
+ 603 0012 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 105:ConfigManager.cpp ****         config_.masterVolume = volume;
+ 604              		.loc 1 105 9 is_stmt 1 discriminator 1 view .LVU94
+ 605              		.loc 1 105 30 is_stmt 0 discriminator 1 view .LVU95
+ 606 0016 98BF     		it	ls
+ 607 0018 80ED030A 		vstrls.32	s0, [r0, #12]
+ 608              	.L29:
+ 106:ConfigManager.cpp ****     }
+ 107:ConfigManager.cpp **** }
+ 609              		.loc 1 107 1 view .LVU96
+ 610 001c 7047     		bx	lr
+ 611              		.cfi_endproc
+ 612              	.LFE566:
+ 614 001e 00BF     		.section	.text._ZN13ConfigManager15SetAudioEnabledEb,"ax",%progbits
+ 615              		.align	1
+ 616              		.p2align 2,,3
+ 617              		.global	_ZN13ConfigManager15SetAudioEnabledEb
+ 618              		.syntax unified
+ 619              		.thumb
+ 620              		.thumb_func
+ 621              		.fpu fpv5-d16
+ 623              	_ZN13ConfigManager15SetAudioEnabledEb:
+ 624              	.LVL24:
+ 625              	.LFB567:
+ 108:ConfigManager.cpp **** 
+ 109:ConfigManager.cpp **** void ConfigManager::SetAudioEnabled(bool enabled) {
+ 626              		.loc 1 109 51 is_stmt 1 view -0
+ 627              		.cfi_startproc
+ 628              		@ args = 0, pretend = 0, frame = 0
+ 629              		@ frame_needed = 0, uses_anonymous_args = 0
+ 630              		@ link register save eliminated.
+ 110:ConfigManager.cpp ****     config_.audioEnabled = enabled;
+ 631              		.loc 1 110 5 view .LVU98
+ 632              		.loc 1 110 26 is_stmt 0 view .LVU99
+ 633 0000 8171     		strb	r1, [r0, #6]
+ 111:ConfigManager.cpp **** }
+ 634              		.loc 1 111 1 view .LVU100
+ 635 0002 7047     		bx	lr
+ 636              		.cfi_endproc
+ 637              	.LFE567:
+ 639              		.section	.text._ZN13ConfigManager14SetMidiEnabledEb,"ax",%progbits
+ 640              		.align	1
+ 641              		.p2align 2,,3
+ 642              		.global	_ZN13ConfigManager14SetMidiEnabledEb
+ 643              		.syntax unified
+ 644              		.thumb
+ 645              		.thumb_func
+ 646              		.fpu fpv5-d16
+ 648              	_ZN13ConfigManager14SetMidiEnabledEb:
+ 649              	.LVL25:
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 14
+
+
+ 650              	.LFB568:
+ 112:ConfigManager.cpp **** 
+ 113:ConfigManager.cpp **** void ConfigManager::SetMidiEnabled(bool enabled) {
+ 651              		.loc 1 113 50 is_stmt 1 view -0
+ 652              		.cfi_startproc
+ 653              		@ args = 0, pretend = 0, frame = 0
+ 654              		@ frame_needed = 0, uses_anonymous_args = 0
+ 655              		@ link register save eliminated.
+ 114:ConfigManager.cpp ****     config_.midiEnabled = enabled;
+ 656              		.loc 1 114 5 view .LVU102
+ 657              		.loc 1 114 25 is_stmt 0 view .LVU103
+ 658 0000 4171     		strb	r1, [r0, #5]
+ 115:ConfigManager.cpp **** }
+ 659              		.loc 1 115 1 view .LVU104
+ 660 0002 7047     		bx	lr
+ 661              		.cfi_endproc
+ 662              	.LFE568:
+ 664              		.section	.text._ZN13ConfigManager16StartCalibrationEv,"ax",%progbits
+ 665              		.align	1
+ 666              		.p2align 2,,3
+ 667              		.global	_ZN13ConfigManager16StartCalibrationEv
+ 668              		.syntax unified
+ 669              		.thumb
+ 670              		.thumb_func
+ 671              		.fpu fpv5-d16
+ 673              	_ZN13ConfigManager16StartCalibrationEv:
+ 674              	.LVL26:
+ 675              	.LFB569:
+ 116:ConfigManager.cpp **** 
+ 117:ConfigManager.cpp **** // Calibration helpers
+ 118:ConfigManager.cpp **** void ConfigManager::StartCalibration() {
+ 676              		.loc 1 118 40 is_stmt 1 view -0
+ 677              		.cfi_startproc
+ 678              		@ args = 0, pretend = 0, frame = 0
+ 679              		@ frame_needed = 0, uses_anonymous_args = 0
+ 680              		@ link register save eliminated.
+ 119:ConfigManager.cpp ****     // TODO: Implement calibration start
+ 120:ConfigManager.cpp ****     isCalibrating_ = true;
+ 681              		.loc 1 120 5 view .LVU106
+ 682              		.loc 1 120 20 is_stmt 0 view .LVU107
+ 683 0000 0123     		movs	r3, #1
+ 684 0002 80F82430 		strb	r3, [r0, #36]
+ 121:ConfigManager.cpp **** }
+ 685              		.loc 1 121 1 view .LVU108
+ 686 0006 7047     		bx	lr
+ 687              		.cfi_endproc
+ 688              	.LFE569:
+ 690              		.section	.text._ZN13ConfigManager14EndCalibrationEv,"ax",%progbits
+ 691              		.align	1
+ 692              		.p2align 2,,3
+ 693              		.global	_ZN13ConfigManager14EndCalibrationEv
+ 694              		.syntax unified
+ 695              		.thumb
+ 696              		.thumb_func
+ 697              		.fpu fpv5-d16
+ 699              	_ZN13ConfigManager14EndCalibrationEv:
+ 700              	.LVL27:
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 15
+
+
+ 701              	.LFB570:
+ 122:ConfigManager.cpp **** 
+ 123:ConfigManager.cpp **** void ConfigManager::EndCalibration() {
+ 702              		.loc 1 123 38 is_stmt 1 view -0
+ 703              		.cfi_startproc
+ 704              		@ args = 0, pretend = 0, frame = 0
+ 705              		@ frame_needed = 0, uses_anonymous_args = 0
+ 706              		@ link register save eliminated.
+ 124:ConfigManager.cpp ****     // TODO: Implement calibration end
+ 125:ConfigManager.cpp ****     isCalibrating_ = false;
+ 707              		.loc 1 125 5 view .LVU110
+ 708              		.loc 1 125 20 is_stmt 0 view .LVU111
+ 709 0000 0023     		movs	r3, #0
+ 710 0002 80F82430 		strb	r3, [r0, #36]
+ 126:ConfigManager.cpp **** }
+ 711              		.loc 1 126 1 view .LVU112
+ 712 0006 7047     		bx	lr
+ 713              		.cfi_endproc
+ 714              	.LFE570:
+ 716              		.section	.text._ZNK13ConfigManager13IsCalibratingEv,"ax",%progbits
+ 717              		.align	1
+ 718              		.p2align 2,,3
+ 719              		.global	_ZNK13ConfigManager13IsCalibratingEv
+ 720              		.syntax unified
+ 721              		.thumb
+ 722              		.thumb_func
+ 723              		.fpu fpv5-d16
+ 725              	_ZNK13ConfigManager13IsCalibratingEv:
+ 726              	.LVL28:
+ 727              	.LFB571:
+ 127:ConfigManager.cpp **** 
+ 128:ConfigManager.cpp **** bool ConfigManager::IsCalibrating() const {
+ 728              		.loc 1 128 43 is_stmt 1 view -0
+ 729              		.cfi_startproc
+ 730              		@ args = 0, pretend = 0, frame = 0
+ 731              		@ frame_needed = 0, uses_anonymous_args = 0
+ 732              		@ link register save eliminated.
+ 129:ConfigManager.cpp ****     return isCalibrating_;
+ 733              		.loc 1 129 5 view .LVU114
+ 130:ConfigManager.cpp **** }
+ 734              		.loc 1 130 1 is_stmt 0 view .LVU115
+ 735 0000 90F82400 		ldrb	r0, [r0, #36]	@ zero_extendqisi2
+ 736              	.LVL29:
+ 737              		.loc 1 130 1 view .LVU116
+ 738 0004 7047     		bx	lr
+ 739              		.cfi_endproc
+ 740              	.LFE571:
+ 742 0006 00BF     		.section	.text._ZN13ConfigManager14ValidateConfigEv,"ax",%progbits
+ 743              		.align	1
+ 744              		.p2align 2,,3
+ 745              		.global	_ZN13ConfigManager14ValidateConfigEv
+ 746              		.syntax unified
+ 747              		.thumb
+ 748              		.thumb_func
+ 749              		.fpu fpv5-d16
+ 751              	_ZN13ConfigManager14ValidateConfigEv:
+ 752              	.LFB582:
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 16
+
+
+ 753              		.cfi_startproc
+ 754              		@ args = 0, pretend = 0, frame = 0
+ 755              		@ frame_needed = 0, uses_anonymous_args = 0
+ 756              		@ link register save eliminated.
+ 757 0000 7047     		bx	lr
+ 758              		.cfi_endproc
+ 759              	.LFE582:
+ 761 0002 00BF     		.section	.text._ZN13ConfigManager11ClampValuesEv,"ax",%progbits
+ 762              		.align	1
+ 763              		.p2align 2,,3
+ 764              		.global	_ZN13ConfigManager11ClampValuesEv
+ 765              		.syntax unified
+ 766              		.thumb
+ 767              		.thumb_func
+ 768              		.fpu fpv5-d16
+ 770              	_ZN13ConfigManager11ClampValuesEv:
+ 771              	.LFB584:
+ 772              		.cfi_startproc
+ 773              		@ args = 0, pretend = 0, frame = 0
+ 774              		@ frame_needed = 0, uses_anonymous_args = 0
+ 775              		@ link register save eliminated.
+ 776 0000 7047     		bx	lr
+ 777              		.cfi_endproc
+ 778              	.LFE584:
+ 780 0002 00BF     		.section	.text._ZN13ConfigManager14WriteToStorageEv,"ax",%progbits
+ 781              		.align	1
+ 782              		.p2align 2,,3
+ 783              		.global	_ZN13ConfigManager14WriteToStorageEv
+ 784              		.syntax unified
+ 785              		.thumb
+ 786              		.thumb_func
+ 787              		.fpu fpv5-d16
+ 789              	_ZN13ConfigManager14WriteToStorageEv:
+ 790              	.LFB586:
+ 791              		.cfi_startproc
+ 792              		@ args = 0, pretend = 0, frame = 0
+ 793              		@ frame_needed = 0, uses_anonymous_args = 0
+ 794              		@ link register save eliminated.
+ 795 0000 7047     		bx	lr
+ 796              		.cfi_endproc
+ 797              	.LFE586:
+ 799 0002 00BF     		.section	.text._ZN13ConfigManager15ReadFromStorageEv,"ax",%progbits
+ 800              		.align	1
+ 801              		.p2align 2,,3
+ 802              		.global	_ZN13ConfigManager15ReadFromStorageEv
+ 803              		.syntax unified
+ 804              		.thumb
+ 805              		.thumb_func
+ 806              		.fpu fpv5-d16
+ 808              	_ZN13ConfigManager15ReadFromStorageEv:
+ 809              	.LVL30:
+ 810              	.LFB575:
+ 131:ConfigManager.cpp **** 
+ 132:ConfigManager.cpp **** // Private methods
+ 133:ConfigManager.cpp **** void ConfigManager::ValidateConfig() {
+ 134:ConfigManager.cpp ****     // TODO: Implement configuration validation
+ 135:ConfigManager.cpp **** }
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 17
+
+
+ 136:ConfigManager.cpp **** 
+ 137:ConfigManager.cpp **** void ConfigManager::ClampValues() {
+ 138:ConfigManager.cpp ****     // TODO: Implement value clamping
+ 139:ConfigManager.cpp **** }
+ 140:ConfigManager.cpp **** 
+ 141:ConfigManager.cpp **** void ConfigManager::WriteToStorage() {
+ 142:ConfigManager.cpp ****     // TODO: Implement storage write
+ 143:ConfigManager.cpp **** }
+ 144:ConfigManager.cpp **** 
+ 145:ConfigManager.cpp **** bool ConfigManager::ReadFromStorage() {
+ 811              		.loc 1 145 39 is_stmt 1 view -0
+ 812              		.cfi_startproc
+ 813              		@ args = 0, pretend = 0, frame = 0
+ 814              		@ frame_needed = 0, uses_anonymous_args = 0
+ 815              		@ link register save eliminated.
+ 146:ConfigManager.cpp ****     // TODO: Implement storage read
+ 147:ConfigManager.cpp ****     return false;
+ 816              		.loc 1 147 5 view .LVU118
+ 148:ConfigManager.cpp **** }
+ 817              		.loc 1 148 1 is_stmt 0 view .LVU119
+ 818 0000 0020     		movs	r0, #0
+ 819              	.LVL31:
+ 820              		.loc 1 148 1 view .LVU120
+ 821 0002 7047     		bx	lr
+ 822              		.cfi_endproc
+ 823              	.LFE575:
+ 825              		.section	.text._ZN13ConfigManager17CalculateChecksumEv,"ax",%progbits
+ 826              		.align	1
+ 827              		.p2align 2,,3
+ 828              		.global	_ZN13ConfigManager17CalculateChecksumEv
+ 829              		.syntax unified
+ 830              		.thumb
+ 831              		.thumb_func
+ 832              		.fpu fpv5-d16
+ 834              	_ZN13ConfigManager17CalculateChecksumEv:
+ 835              	.LVL32:
+ 836              	.LFB576:
+ 149:ConfigManager.cpp **** 
+ 150:ConfigManager.cpp **** uint32_t ConfigManager::CalculateChecksum() {
+ 837              		.loc 1 150 45 is_stmt 1 view -0
+ 838              		.cfi_startproc
+ 839              		@ args = 0, pretend = 0, frame = 0
+ 840              		@ frame_needed = 0, uses_anonymous_args = 0
+ 841              		@ link register save eliminated.
+ 151:ConfigManager.cpp ****     // TODO: Implement checksum calculation
+ 152:ConfigManager.cpp ****     return 0;
+ 842              		.loc 1 152 5 view .LVU122
+ 153:ConfigManager.cpp **** }...
+ 843              		.loc 1 153 1 is_stmt 0 view .LVU123
+ 844 0000 0020     		movs	r0, #0
+ 845              	.LVL33:
+ 846              		.loc 1 153 1 view .LVU124
+ 847 0002 7047     		bx	lr
+ 848              		.cfi_endproc
+ 849              	.LFE576:
+ 851              		.text
+ 852              	.Letext0:
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 18
+
+
+ 853              		.file 2 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 854              		.file 3 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 855              		.file 4 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cmath"
+ 856              		.file 5 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\std_abs.h"
+ 857              		.file 6 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\arm-none-eabi\\th
+ 858              		.file 7 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\math.h"
+ 859              		.file 8 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\math.h"
+ 860              		.file 9 "ConfigManager.h"
+ 861              		.file 10 "<built-in>"
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 19
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ConfigManager.cpp
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:17     .text._ZN13ConfigManagerC2Ev:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:26     .text._ZN13ConfigManagerC2Ev:00000000 _ZN13ConfigManagerC2Ev
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:26     .text._ZN13ConfigManagerC2Ev:00000000 _ZN13ConfigManagerC1Ev
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:48     .text._ZN13ConfigManagerD2Ev:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:56     .text._ZN13ConfigManagerD2Ev:00000000 _ZN13ConfigManagerD2Ev
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:56     .text._ZN13ConfigManagerD2Ev:00000000 _ZN13ConfigManagerD1Ev
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:72     .text._ZN13ConfigManager4InitEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:80     .text._ZN13ConfigManager4InitEv:00000000 _ZN13ConfigManager4InitEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:168    .text._ZN13ConfigManager4InitEv:00000034 $d
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:178    .text._ZN13ConfigManager12LoadDefaultsEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:186    .text._ZN13ConfigManager12LoadDefaultsEv:00000000 _ZN13ConfigManager12LoadDefaultsEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:221    .text._ZN13ConfigManager12LoadDefaultsEv:00000034 $d
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:231    .text._ZN13ConfigManager10SaveConfigEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:239    .text._ZN13ConfigManager10SaveConfigEv:00000000 _ZN13ConfigManager10SaveConfigEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:253    .text._ZN13ConfigManager10LoadConfigEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:261    .text._ZN13ConfigManager10LoadConfigEv:00000000 _ZN13ConfigManager10LoadConfigEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:272    .text._ZN13ConfigManager13IsConfigValidEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:280    .text._ZN13ConfigManager13IsConfigValidEv:00000000 _ZN13ConfigManager13IsConfigValidEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:298    .text._ZN13ConfigManager9GetConfigEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:306    .text._ZN13ConfigManager9GetConfigEv:00000000 _ZN13ConfigManager9GetConfigEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:321    .text._ZNK13ConfigManager9GetConfigEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:329    .text._ZNK13ConfigManager9GetConfigEv:00000000 _ZNK13ConfigManager9GetConfigEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:340    .text._ZNK13ConfigManager11GetNumBeamsEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:348    .text._ZNK13ConfigManager11GetNumBeamsEv:00000000 _ZNK13ConfigManager11GetNumBeamsEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:366    .text._ZNK13ConfigManager11GetBaseNoteEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:374    .text._ZNK13ConfigManager11GetBaseNoteEv:00000000 _ZNK13ConfigManager11GetBaseNoteEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:392    .text._ZNK13ConfigManager14GetMidiChannelEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:400    .text._ZNK13ConfigManager14GetMidiChannelEv:00000000 _ZNK13ConfigManager14GetMidiChannelEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:418    .text._ZNK13ConfigManager15GetMasterVolumeEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:426    .text._ZNK13ConfigManager15GetMasterVolumeEv:00000000 _ZNK13ConfigManager15GetMasterVolumeEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:442    .text._ZNK13ConfigManager14IsAudioEnabledEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:450    .text._ZNK13ConfigManager14IsAudioEnabledEv:00000000 _ZNK13ConfigManager14IsAudioEnabledEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:468    .text._ZNK13ConfigManager13IsMidiEnabledEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:476    .text._ZNK13ConfigManager13IsMidiEnabledEv:00000000 _ZNK13ConfigManager13IsMidiEnabledEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:494    .text._ZN13ConfigManager11SetNumBeamsEh:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:502    .text._ZN13ConfigManager11SetNumBeamsEh:00000000 _ZN13ConfigManager11SetNumBeamsEh
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:523    .text._ZN13ConfigManager11SetBaseNoteEh:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:531    .text._ZN13ConfigManager11SetBaseNoteEh:00000000 _ZN13ConfigManager11SetBaseNoteEh
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:551    .text._ZN13ConfigManager14SetMidiChannelEh:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:559    .text._ZN13ConfigManager14SetMidiChannelEh:00000000 _ZN13ConfigManager14SetMidiChannelEh
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:580    .text._ZN13ConfigManager15SetMasterVolumeEf:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:588    .text._ZN13ConfigManager15SetMasterVolumeEf:00000000 _ZN13ConfigManager15SetMasterVolumeEf
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:615    .text._ZN13ConfigManager15SetAudioEnabledEb:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:623    .text._ZN13ConfigManager15SetAudioEnabledEb:00000000 _ZN13ConfigManager15SetAudioEnabledEb
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:640    .text._ZN13ConfigManager14SetMidiEnabledEb:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:648    .text._ZN13ConfigManager14SetMidiEnabledEb:00000000 _ZN13ConfigManager14SetMidiEnabledEb
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:665    .text._ZN13ConfigManager16StartCalibrationEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:673    .text._ZN13ConfigManager16StartCalibrationEv:00000000 _ZN13ConfigManager16StartCalibrationEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:691    .text._ZN13ConfigManager14EndCalibrationEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:699    .text._ZN13ConfigManager14EndCalibrationEv:00000000 _ZN13ConfigManager14EndCalibrationEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:717    .text._ZNK13ConfigManager13IsCalibratingEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:725    .text._ZNK13ConfigManager13IsCalibratingEv:00000000 _ZNK13ConfigManager13IsCalibratingEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:743    .text._ZN13ConfigManager14ValidateConfigEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:751    .text._ZN13ConfigManager14ValidateConfigEv:00000000 _ZN13ConfigManager14ValidateConfigEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:762    .text._ZN13ConfigManager11ClampValuesEv:00000000 $t
+ARM GAS  C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s 			page 20
+
+
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:770    .text._ZN13ConfigManager11ClampValuesEv:00000000 _ZN13ConfigManager11ClampValuesEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:781    .text._ZN13ConfigManager14WriteToStorageEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:789    .text._ZN13ConfigManager14WriteToStorageEv:00000000 _ZN13ConfigManager14WriteToStorageEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:800    .text._ZN13ConfigManager15ReadFromStorageEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:808    .text._ZN13ConfigManager15ReadFromStorageEv:00000000 _ZN13ConfigManager15ReadFromStorageEv
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:826    .text._ZN13ConfigManager17CalculateChecksumEv:00000000 $t
+C:\Users\Marco\AppData\Local\Temp\ccB6wq07.s:834    .text._ZN13ConfigManager17CalculateChecksumEv:00000000 _ZN13ConfigManager17CalculateChecksumEv
+
+NO UNDEFINED SYMBOLS
