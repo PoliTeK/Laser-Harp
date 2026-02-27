@@ -1,54 +1,55 @@
 # LaserHarp Project
 
-Un progetto di arpa laser utilizzando la piattaforma Daisy Seed.
+A laser harp project using the Daisy Seed platform.
 
-## Descrizione
+## Description
 
-Questo progetto implementa un'arpa laser che rileva l'interruzione di raggi laser per generare suoni e note musicali. La Daisy Seed viene utilizzata per l'elaborazione audio e il controllo del sistema.
+This project implements a laser harp that detects the interruption of laser beams to generate sounds and musical notes. The Daisy Seed is used for audio processing and system control.
 
-## Struttura del Progetto
+## Project Structure
 
-- `LaserHarp.cpp` - File principale con il codice C++
-- `Makefile` - File di configurazione per la compilazione
-- `README.md` - Questo file
+- `LaserHarp.cpp` - Main file with the C++ code
+- `Makefile` - Configuration file for compilation
+- `README.md` - This file
 
-## Come Compilare
+## How to Compile
 
-1. Assicurati di avere il toolchain ARM installato (`arm-none-eabi-gcc`)
-2. Naviga nella directory del progetto
-3. Esegui la compilazione:
+1. Make sure you have the ARM toolchain installed (`arm-none-eabi-gcc`)
+2. Navigate to the project directory
+3. Run the build:
    ```bash
    make
    ```
 
-## Come Flashare sulla Daisy Seed
+## How to Flash to the Daisy Seed
 
-1. Metti la Daisy Seed in modalità DFU:
-   - Tieni premuto il pulsante `BOOT`
-   - Premi e rilascia `RESET`
-   - Rilascia `BOOT`
+1. Put the Daisy Seed into DFU mode:
+   - Press and hold the `BOOT` button
+   - Press and release `RESET`
+   - Release `BOOT`
 
-2. Flash del firmware:
+2. Flash the firmware:
    ```bash
    make program-dfu
    ```
 
-## Funzionalità Previste
+## Planned Features
 
-- [ ] Rilevamento interruzione raggi laser
-- [ ] Generazione di note musicali
-- [ ] Output MIDI
-- [ ] Effetti audio in tempo reale
-- [ ] Controlli per la configurazione
+- [ ] Laser beam interruption detection
+- [ ] Musical note generation
+- [ ] MIDI output
+- [ ] Real-time audio effects
+- [ ] Configuration controls
 
-## Hardware Necessario
+## Required Hardware
 
 - Daisy Seed
-- Moduli laser
-- Fotoresistori o fotodiodi
-- Circuiti di condizionamento del segnale
-- Amplificatore audio (opzionale)
+- Laser modules
+- Photoresistors or photodiodes
+- Signal conditioning circuits
+- Audio amplifier (optional)
 
-## Note
+## Notes
 
-Il codice attuale implementa un semplice pass-through audio e fa lampeggiare il LED per verificare che il sistema funzioni. Le funzionalità specifiche dell'arpa laser verranno implementate progressivamente.
+
+The current code implements a simple audio pass-through and blinks the LED to verify that the system works. The specific laser harp features will be implemented progressively.
